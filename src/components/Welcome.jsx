@@ -12,7 +12,7 @@ const renderText = (text,className,baseWeight=400) =>{
     ))
 
 }
-
+// update
 const Welcome = () => {
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
