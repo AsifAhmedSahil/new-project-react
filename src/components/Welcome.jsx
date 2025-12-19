@@ -19,7 +19,7 @@ const renderText = (text, className, baseWeight = 400) => {
     </span>
   ));
 };
-// check merge
+// check merge update
 const setupTextHover = (container, type) => {
   if (!container) return ()=>{};
 
