@@ -7,9 +7,15 @@ import { useLayoutEffect, useRef } from "react";
 const WindowWrapper = (Component, windowKey) => {
   const Wrapped = (props) => {
     const { focusWindow, windows } = useWindowStore();
-    const { isOpen, zIndex } = windows[windowKey];
+    const {
+      isOpen,
+      isMinimized,
+      isMaximized,
+      zIndex,
+    } = windows[windowKey];
 
     const ref = useRef(null);
+    const dragInstance = useRef(null);
 
     useGSAP(() => {
       const el = ref.current;
@@ -40,6 +46,35 @@ const WindowWrapper = (Component, windowKey) => {
       el.style.display = isOpen ? "block" : "none";
     }, [isOpen]);
 
+    
+    /* ---------- Minimize / Close ---------- */
+    useLayoutEffect(() => {
+      const el = ref.current;
+      if (!el) return;
+
+      el.style.display =
+        isOpen && !isMinimized ? "block" : "none";
+    }, [isOpen, isMinimized]);
+
+    /* ---------- Maximize ---------- */
+    useLayoutEffect(() => {
+      const el = ref.current;
+      if (!el) return;
+
+      if (isMaximized) {
+        el.style.top = "0";
+        el.style.left = "0";
+        el.style.width = "100vw";
+        el.style.height = "100vh";
+
+        dragInstance.current?.disable();
+      } else {
+        el.style.width = "";
+        el.style.height = "";
+
+        dragInstance.current?.enable();
+      }
+    }, [isMaximized]);
     return (
       <section id={windowKey} ref={ref} style={{ zIndex }} className="absolute">
         <Component {...props} />
