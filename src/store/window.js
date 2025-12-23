@@ -50,6 +50,13 @@ const useWindowStore = create(
         win.isMinimized = true;
       }),
 
+      minimizeWindowStateOnly: (windowKey) =>
+  set((state) => {
+    const win = state.windows[windowKey];
+    if (!win) return;
+    win.isMinimized = true;
+  }),
+
     maximizeWindow: (windowKey) =>
       set((state) => {
          console.log("maximize:", windowKey);

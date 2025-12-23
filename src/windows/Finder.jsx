@@ -6,10 +6,13 @@ import useWindowStore from "#store/window";
 import clsx from "clsx";
 import { Search } from "lucide-react";
 
-const Finder = () => {
+
+const Finder = ({dockRefs}) => {
   const { activeLocation, setActiveLocation } = useLocationStore();
 
   const { openWindow } = useWindowStore();
+
+
 
   const openItem = (item) => {
     if (item.fileType === "pdf") return openWindow("resume");
@@ -21,9 +24,9 @@ const Finder = () => {
   };
 
   const renderList = (items) =>
-    items.map((item) => (
+    items.map((item,index) => (
       <li
-        key={item.id}
+        key={item.id || `${item.name}-${index}`}
         className={clsx(
           item.id === activeLocation.id ? "active" : "not-active"
         )}
@@ -37,7 +40,7 @@ const Finder = () => {
   return (
     <>
       <div id="window-header">
-        <WindowControls target="finder" />
+        <WindowControls target="finder" dockRefs={dockRefs} />
         <Search className="icon" />
       </div>
 
@@ -53,9 +56,9 @@ const Finder = () => {
           </div>
         </div>
         <ul className="content">
-          {activeLocation?.children.map((item) => (
+          {activeLocation?.children.map((item,index) => (
             <li
-              key={item.key}
+              key={item.key || `${item.name}-${index}`}
               className={item.position}
               onClick={() => openItem(item)}
             >

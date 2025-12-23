@@ -14,11 +14,11 @@ import {
 } from "lucide-react";
 import React from "react";
 
-const Safari = () => {
+const Safari = ({dockRefs}) => {
   return (
     <>
       <div id="window-header">
-        <WindowControls target="safari" />
+        <WindowControls target="safari" dockRefs={dockRefs}/>
 
         <PanelLeft className="ml-10 icon" />
 

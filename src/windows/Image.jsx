@@ -2,7 +2,7 @@ import { WindowControls } from "#components";
 import WindowWrapper from "#hoc/WindowWrapper";
 import useWindowStore from "#store/window";
 
-const Image = () => {
+const Image = ({dockRefs}) => {
   const { windows } = useWindowStore();
 
   const data = windows.imgfile?.data;
@@ -14,7 +14,7 @@ const Image = () => {
   return (
     <>
       <div id="window-header">
-        <WindowControls target="imgfile" />
+        <WindowControls target="imgfile" dockRefs={dockRefs} />
         <h2>{name}</h2>
       </div>
 

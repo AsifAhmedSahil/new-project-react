@@ -3,11 +3,11 @@ import { socials } from "#constants";
 import WindowWrapper from "#hoc/WindowWrapper";
 import React from "react";
 
-const Contact = () => {
+const Contact = ({dockRefs}) => {
   return (
     <>
       <div id="window-header">
-        <WindowControls target="contact" />
+        <WindowControls target="contact" dockRefs={dockRefs} />
         <h2>Contact Me</h2>
       </div>
 

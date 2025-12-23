@@ -2,7 +2,7 @@ import { WindowControls } from "#components";
 import WindowWrapper from "#hoc/WindowWrapper";
 import useWindowStore from "#store/window";
 
-const Text = () => {
+const Text = ({dockRefs}) => {
   const { windows } = useWindowStore();
 
   const data = windows.txtfile?.data;
@@ -14,7 +14,7 @@ const Text = () => {
   return (
     <>
       <div id="window-header">
-        <WindowControls target="txtfile" />
+        <WindowControls target="txtfile" dockRefs={dockRefs}/>
         <h2>{name}</h2>
       </div>
 

@@ -4,11 +4,11 @@ import WindowWrapper from "#hoc/WindowWrapper";
 import { Check, Flag } from "lucide-react";
 import React from "react";
 
-const Terminal = () => {
+const Terminal = ({dockRefs}) => {
   return (
     <>
       <div id="window-header">
-        <WindowControls target="terminal"/>
+        <WindowControls target="terminal" dockRefs={dockRefs}/>
         <h2>Tech Stack</h2>
       </div>
 

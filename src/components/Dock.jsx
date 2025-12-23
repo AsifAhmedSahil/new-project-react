@@ -5,10 +5,11 @@ import gsap from "gsap";
 import { useRef } from "react";
 import { Tooltip } from "react-tooltip";
 
-const Dock = () => {
-  const {openWindow,closeWindow,windows} = useWindowStore()
+const Dock = ({ dockRefs }) => {
+  const { openWindow, closeWindow, windows } = useWindowStore();
   const dockRef = useRef(null);
 
+  // dock icon hover animation
   useGSAP(() => {
     const dock = dockRef.current;
     if (!dock) return () => {};
@@ -33,49 +34,47 @@ const Dock = () => {
       });
     };
 
-    const handleMouseMove = (e) =>{
-        const {left} = dock.getBoundingClientRect()
-
-        animateIcons(e.clientX - left);
+    const handleMouseMove = (e) => {
+      const { left } = dock.getBoundingClientRect();
+      animateIcons(e.clientX - left);
     };
 
-    const resetIcons = ()=> icons.forEach((icon)=> gsap.to(icon,{
-        scale:1,
-        y:0,
-        duration:0.3,
-        ease:"power1.out"
-    }))
+    const resetIcons = () =>
+      icons.forEach((icon) =>
+        gsap.to(icon, {
+          scale: 1,
+          y: 0,
+          duration: 0.3,
+          ease: "power1.out",
+        })
+      );
 
-    dock.addEventListener("mousemove",handleMouseMove)
-    dock.addEventListener("mouseleave",resetIcons)
+    dock.addEventListener("mousemove", handleMouseMove);
+    dock.addEventListener("mouseleave", resetIcons);
 
-    return ()=>{
-        dock.removeEventListener("mousemove",handleMouseMove)
-        dock.removeEventListener("mouseleave",resetIcons)
-    }
-
-
-  },[]);
+    return () => {
+      dock.removeEventListener("mousemove", handleMouseMove);
+      dock.removeEventListener("mouseleave", resetIcons);
+    };
+  }, []);
 
   const toggleApp = (app) => {
-    if(!app.canOpen) return;
+    if (!app.canOpen) return;
 
-    const window = windows[app.id]
+    const window = windows[app.id];
 
-    if(!window){
-      console.error(`window not found for app: ${app.id}`)
+    if (!window) {
+      console.error(`window not found for app: ${app.id}`);
       return;
     }
 
-    if(window.isOpen){
-      closeWindow(app.id)
-    } else{
-      openWindow(app.id)
+    if (window.isOpen) {
+      closeWindow(app.id);
+    } else {
+      openWindow(app.id);
     }
-
-    console.log(windows)
-
   };
+
   return (
     <section id="dock">
       <div className="dock-container" ref={dockRef}>
@@ -90,6 +89,9 @@ const Dock = () => {
               data-tooltip-delay-show={150}
               disabled={!canOpen}
               onClick={() => toggleApp({ id, canOpen })}
+              ref={(el) => {
+                if (dockRefs) dockRefs.current[id] = el; // save ref for minimize animation
+              }}
             >
               <img
                 src={`/images/${icon}`}

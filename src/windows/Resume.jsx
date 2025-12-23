@@ -8,11 +8,11 @@ import "react-pdf/dist/Page/TextLayer.css";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`
 
-const Resume = () => {
+const Resume = ({dockRefs}) => {
   return (
     <>
       <div id="window-header">
-        <WindowControls target="resume" />
+        <WindowControls target="resume" dockRefs={dockRefs}/>
         <h2>Resume.pdf</h2>
 
         <a

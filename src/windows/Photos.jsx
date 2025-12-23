@@ -5,12 +5,12 @@ import useWindowStore from "#store/window";
 import { Mail, Search } from "lucide-react";
 import React from "react";
 
-const Photos = () => {
+const Photos = ({dockRefs}) => {
   const { openWindow } = useWindowStore();
   return (
     <>
       <div id="window-header">
-        <WindowControls target="photos" />
+        <WindowControls target="photos" dockRefs={dockRefs}/>
         <div className="w-full flex justify-end items-center gap-3 text-gray-500">
           <Mail className="icon" />
           <Search className="icon" />
