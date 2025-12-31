@@ -6,6 +6,7 @@ import { Safari, Terminal, Resume, Finder, Text, Image, Contact } from '#windows
 import { useEffect, useRef, useState, lazy, Suspense } from 'react'
 import useWindowStore from '#store/window'
 import WallpaperWindowWrapper from '#windows/WallpaperWindow'
+import DesktopWidgets from '#components/DesktopWidget'
 
 // Lazy load only the Photos window UI
 const Photos = lazy(() => import('#windows/Photos'))
@@ -46,6 +47,7 @@ const App = () => {
       <Image dockRefs={dockRefs} /> {/* Must always be loaded */}
       <Contact dockRefs={dockRefs} />
       <Home />
+      <DesktopWidgets/>
 
       {/* Lazy load Photos UI only */}
       <Suspense fallback={<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-gray-500">Loading Photos...</div>}>
