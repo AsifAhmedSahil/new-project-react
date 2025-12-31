@@ -32,6 +32,9 @@ const Resume = ({dockRefs}) => {
   );
 };
 
-const ResumeWindow = WindowWrapper(Resume, "resume");
+const ResumeWindow = WindowWrapper(Resume, "resume", {
+  width: "38rem",
+  height: "52rem",
+});
 
 export default ResumeWindow;

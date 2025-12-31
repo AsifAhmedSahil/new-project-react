@@ -3,9 +3,11 @@ import gsap from "gsap";
 
 const WindowControls = ({ target ,dockRefs }) => {
   const { closeWindow, maximizeWindow } = useWindowStore();
+  console.log(target,dockRefs)
+  console.log(closeWindow)
 
   const handleMinimize = () => {
-    console.log("hello")
+    
     const winEl = document.getElementById(target);
     const iconEl = dockRefs.current[target]; // dock icon reference
     if (!winEl || !iconEl) return;

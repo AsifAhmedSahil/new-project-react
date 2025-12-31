@@ -58,6 +58,9 @@ const Terminal = ({dockRefs}) => {
   );
 };
 
-const TerminalWindow = WindowWrapper(Terminal, "terminal");
+const TerminalWindow = WindowWrapper(Terminal, "terminal", {
+  width: "42rem",
+  height: "30rem",
+});
 
 export default TerminalWindow;

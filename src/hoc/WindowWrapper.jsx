@@ -4,7 +4,15 @@ import gsap from "gsap";
 import { Draggable } from "gsap/Draggable";
 import { useLayoutEffect, useRef } from "react";
 
-const WindowWrapper = (Component, windowKey) => {
+/**
+ * WindowWrapper: Wraps a component into draggable, maximizable, focusable window.
+ * @param {React.Component} Component 
+ * @param {string} windowKey 
+ * @param {Object} options - default width/height
+ */
+const WindowWrapper = (Component, windowKey, options = {}) => {
+  const { width = "50rem", height = "40rem" } = options;
+
   const Wrapped = (props) => {
     const { focusWindow, windows } = useWindowStore();
     const {
@@ -12,11 +20,12 @@ const WindowWrapper = (Component, windowKey) => {
       isMinimized,
       isMaximized,
       zIndex,
-    } = windows[windowKey];
+    } = windows[windowKey] || {};
 
     const ref = useRef(null);
     const dragInstance = useRef(null);
 
+    /* ---------- GSAP Open Animation ---------- */
     useGSAP(() => {
       const el = ref.current;
       if (!el || !isOpen) return;
@@ -30,34 +39,28 @@ const WindowWrapper = (Component, windowKey) => {
       );
     }, [isOpen]);
 
+    /* ---------- Draggable ---------- */
     useGSAP(() => {
       const el = ref.current;
       if (!el) return;
       const [instance] = Draggable.create(el, {
         onPress: () => focusWindow(windowKey),
-         ignore: "input, textarea, button, select",
+        ignore: "input, textarea, button, select",
       });
+
+      dragInstance.current = instance;
 
       return () => instance.kill();
     }, []);
 
+    /* ---------- Display ---------- */
     useLayoutEffect(() => {
       const el = ref.current;
       if (!el) return;
-      el.style.display = isOpen ? "block" : "none";
-    }, [isOpen]);
-
-    
-    /* ---------- Minimize / Close ---------- */
-    useLayoutEffect(() => {
-      const el = ref.current;
-      if (!el) return;
-
-      el.style.display =
-        isOpen && !isMinimized ? "block" : "none";
+      el.style.display = isOpen && !isMinimized ? "block" : "none";
     }, [isOpen, isMinimized]);
 
-    /* ---------- Maximize ---------- */
+    /* ---------- Size Handling ---------- */
     useLayoutEffect(() => {
       const el = ref.current;
       if (!el) return;
@@ -70,22 +73,26 @@ const WindowWrapper = (Component, windowKey) => {
 
         dragInstance.current?.disable();
       } else {
-        el.style.width = "";
-        el.style.height = "";
+        el.style.width = width;
+        el.style.height = height;
 
         dragInstance.current?.enable();
       }
-    }, [isMaximized]);
+    }, [isMaximized, width, height]);
+
     return (
-      <section id={windowKey} ref={ref} style={{ zIndex }} className="absolute">
+      <section
+        id={windowKey}
+        ref={ref}
+        style={{ zIndex }}
+        className="absolute bg-white rounded-lg shadow-2xl overflow-hidden"
+      >
         <Component {...props} />
       </section>
     );
   };
 
-  Wrapped.displayName = `windowWrapper(${
-    Component.displayName || Component.name || "Component"
-  })`;
+  Wrapped.displayName = `windowWrapper(${Component.displayName || Component.name || "Component"})`;
   return Wrapped;
 };
 

@@ -549,6 +549,13 @@ const WINDOW_CONFIG = {
     zIndex: INITIAL_Z_INDEX,
     data: null,
   },
+  wallpaper: {
+    isOpen: false,
+    isMinimized: false,
+    isMaximized: false,
+    zIndex: INITIAL_Z_INDEX,
+    data: null,
+  },
 };
 
 
