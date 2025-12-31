@@ -14,6 +14,11 @@ const navLinks = [
     name: "Resume",
     type: "resume",
   },
+  {
+    id: 4,
+    name: "Skills",
+    type: "terminal",
+  },
 ];
 
 const navIcons = [
@@ -36,43 +41,18 @@ const navIcons = [
 ];
 
 const dockApps = [
-  {
-    id: "finder",
-    name: "Portfolio", // was "Finder"
-    icon: "finder.png",
-    canOpen: true,
-  },
-  {
-    id: "safari",
-    name: "Articles", // was "Safari"
-    icon: "safari.png",
-    canOpen: true,
-  },
-  {
-    id: "photos",
-    name: "Gallery", // was "Photos"
-    icon: "photos.png",
-    canOpen: true,
-  },
-  {
-    id: "contact",
-    name: "Contact", // or "Get in touch"
-    icon: "contact.png",
-    canOpen: true,
-  },
-  {
-    id: "terminal",
-    name: "Skills", // was "Terminal"
-    icon: "terminal.png",
-    canOpen: true,
-  },
-  {
-    id: "trash",
-    name: "Archive", // was "Trash"
-    icon: "trash.png",
-    canOpen: false,
-  },
-];
+  { id: "finder", name: "Portfolio", icon: "finder.png", canOpen: true },
+  { id: "safari", name: "Articles", icon: "safari.png", canOpen: true },
+  { id: "photos", name: "Gallery", icon: "photos.png", canOpen: true },
+  { id: "contact", name: "Contact", icon: "contact.png", canOpen: true },
+  { id: "terminal", name: "Skills", icon: "terminal.png", canOpen: true },
+  { id: "safari", name: "Linkedin", icon: "linkedin.png", canOpen: true },
+  { id: "resume", name: "Resume", icon: "pdf.png", canOpen: true },
+  { id: "wallpaper", name: "Wallpaper", icon: "wallpaper.png", canOpen: true },
+  { id: "finder", name: "Projects", icon: "projects.png", canOpen: true },
+  { id: "trash", name: "Archive", icon: "trash.png", canOpen: false },
+]
+
 
 const blogPosts = [
   {
@@ -158,51 +138,35 @@ const socials = [
 ];
 
 const photosLinks = [
-  {
-    id: 1,
-    icon: "/icons/gicon1.svg",
-    title: "Library",
-  },
-  {
-    id: 2,
-    icon: "/icons/gicon2.svg",
-    title: "Memories",
-  },
-  {
-    id: 3,
-    icon: "/icons/file.svg",
-    title: "Places",
-  },
-  {
-    id: 4,
-    icon: "/icons/gicon4.svg",
-    title: "People",
-  },
-  {
-    id: 5,
-    icon: "/icons/gicon5.svg",
-    title: "Favorites",
-  },
+  { id: 1, icon: "/icons/gicon1.svg", title: "Library" },
+  { id: 2, icon: "/icons/gicon2.svg", title: "Memories" },
+  { id: 3, icon: "/icons/file.svg", title: "Places" },
+  { id: 4, icon: "/icons/gicon4.svg", title: "People" },
+  { id: 5, icon: "/icons/gicon5.svg", title: "Favorites" },
 ];
 
-const gallery = [
-  {
-    id: 1,
-    img: "/images/gal1.png",
-  },
-  {
-    id: 2,
-    img: "/images/gal2.png",
-  },
-  {
-    id: 3,
-    img: "/images/gal3.png",
-  },
-  {
-    id: 4,
-    img: "/images/gal4.png",
-  },
+const allImages = [
+  { id: 1, img: "/images/gal1.jpg",name:"Rising Star Award - 2025" },
+  { id: 2, img: "/images/gal2.jpg",name:"Programming Hero Event - HeroUnion 2025" },
+  { id: 3, img: "/images/gal3.jpg" ,name:"Programming Hero Event - HeroUnion 2025"},
+  { id: 4, img: "/images/gal4.jpeg",name:"Champion EDU Inter University Hackhathon - 2023" },
+  { id: 5, img: "/images/gal5.jpg",name:"Books - My Dopamine" },
+  { id: 6, img: "/images/gal6.jpg" ,name:"Refreshment - Enjoy with beloved one's"},
+  { id: 7, img: "/images/gal7.jpg" ,name:"Rakib Bhai - Mentor Programming Hero"},
+  { id: 8, img: "/images/gal8.jpg" ,name:"Beach - refreshment 2024"},
+  { id: 9, img: "/images/gal9.jpg" ,name:"River View - 2023"},
+  { id: 10, img: "/images/gal10.jpg" ,name: "EDU Library - The Last Exam Preparation"},
 ];
+
+// আলাদা tab অনুযায়ী assign
+const galleryByTab = {
+  1: allImages, // Library → সব ছবি
+  2: allImages.slice(0, 2), // Memories → প্রথম 2
+  3: allImages.slice(2, 4), // Places → 3,4
+  4: allImages.slice(4, 7), // People → 5,6,7
+  5: allImages.slice(7),    // Favorites → 8,9,10
+};
+
 
 export {
   navLinks,
@@ -212,7 +176,7 @@ export {
   techStack,
   socials,
   photosLinks,
-  gallery,
+  galleryByTab,
 };
 
 const WORK_LOCATION = {

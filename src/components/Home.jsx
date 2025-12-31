@@ -1,9 +1,10 @@
 import { locations } from "#constants"
+import { Draggable } from "#lib/gsap"
 import useLocationStore from "#store/location"
 import useWindowStore from "#store/window"
 import { useGSAP } from "@gsap/react"
 import clsx from "clsx"
-import { Draggable } from "gsap/Draggable"
+
 
 const projects = locations.work?.children ?? []
 const Home = () => {

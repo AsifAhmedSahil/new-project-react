@@ -8,14 +8,14 @@ const Image = ({dockRefs}) => {
   const data = windows.imgfile?.data;
   if (!data) return null;
 
-  console.log(data)
+  
 
   const { name, imageUrl } = data;
   return (
     <>
-      <div id="window-header">
+      <div id="window-header" className="flex items-center justify-between">
         <WindowControls target="imgfile" dockRefs={dockRefs} />
-        <h2>{name}</h2>
+        <h2 className="text-gray-700 text-sm font-medium">{name}</h2>
       </div>
 
       <div className="p-5 bg-white">
@@ -33,6 +33,6 @@ const Image = ({dockRefs}) => {
   );
 };
 
-const ImageWindow = WindowWrapper(Image, "imgfile");
+const ImageWindow = WindowWrapper(Image, "imgfile",{ width : "50rem", height : "45rem" });
 
 export default ImageWindow;
