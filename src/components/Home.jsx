@@ -6,6 +6,7 @@ import { useGSAP } from "@gsap/react"
 import clsx from "clsx"
 
 
+
 const projects = locations.work?.children ?? []
 const Home = () => {
     const {setActiveLocation} = useLocationStore()
@@ -39,6 +40,7 @@ const Home = () => {
             }
 
         </ul>
+      
 
     </section>
   )

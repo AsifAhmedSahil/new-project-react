@@ -10,6 +10,7 @@ const wallpapers = [
   "/images/wallpaper-8.jpg",
   "/images/wallpaper-9.jpg",
   "/images/wallpaper-10.jpg",
+
   
 ];
 

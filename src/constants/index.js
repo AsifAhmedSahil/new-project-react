@@ -46,10 +46,12 @@ const dockApps = [
   { id: "photos", name: "Gallery", icon: "photos.png", canOpen: true },
   { id: "contact", name: "Contact", icon: "contact.png", canOpen: true },
   { id: "terminal", name: "Skills", icon: "terminal.png", canOpen: true },
-  { id: "safari", name: "Linkedin", icon: "linkedin.png", canOpen: true },
+  { id: "linkedin", name: "Linkedin", icon: "linkedin.png", canOpen: true },
   { id: "resume", name: "Resume", icon: "pdf.png", canOpen: true },
   { id: "wallpaper", name: "Wallpaper", icon: "wallpaper.png", canOpen: true },
   { id: "finder", name: "Projects", icon: "projects.png", canOpen: true },
+  { id: "leetcode", name: "Leetcode", icon: "leetcode.webp", canOpen: true },
+  { id: "github", name: "Github", icon: "github.png", canOpen: true },
   { id: "trash", name: "Archive", icon: "trash.png", canOpen: false },
 ]
 
@@ -486,6 +488,27 @@ const WINDOW_CONFIG = {
     data: null,
   },
   photos: {
+    isOpen: false,
+    isMinimized: false,
+    isMaximized: false,
+    zIndex: INITIAL_Z_INDEX,
+    data: null,
+  },
+  leetcode: {
+    isOpen: false,
+    isMinimized: false,
+    isMaximized: false,
+    zIndex: INITIAL_Z_INDEX,
+    data: null,
+  },
+  github: {
+    isOpen: false,
+    isMinimized: false,
+    isMaximized: false,
+    zIndex: INITIAL_Z_INDEX,
+    data: null,
+  },
+  linkedin: {
     isOpen: false,
     isMinimized: false,
     isMaximized: false,

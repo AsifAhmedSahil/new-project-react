@@ -2,7 +2,7 @@
 import gsap from 'gsap'
 import { Draggable } from 'gsap/Draggable'
 import { Dock, Home, Navbar, Welcome } from '#components'
-import { Safari, Terminal, Resume, Finder, Text, Image, Contact } from '#windows'
+import { Safari, Terminal, Resume, Finder, Text, Image, Contact, LeetCodeWindow, GithubWindow, LinkedInWindow } from '#windows'
 import { useEffect, useRef, useState, lazy, Suspense } from 'react'
 import useWindowStore from '#store/window'
 import WallpaperWindowWrapper from '#windows/WallpaperWindow'
@@ -48,6 +48,9 @@ const App = () => {
       <Contact dockRefs={dockRefs} />
       <Home />
       <DesktopWidgets/>
+      <LeetCodeWindow/>
+      <GithubWindow/>
+      <LinkedInWindow/>
 
       {/* Lazy load Photos UI only */}
       <Suspense fallback={<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-gray-500">Loading Photos...</div>}>
