@@ -129,7 +129,7 @@ const Welcome = () => {
       <p ref={taglineRef} className="text-4xl font-georama mt-2  italic">
         {renderText(
           "Turning Ideas into Code & Building Full-Stack Web Apps That Inspire",
-          "text-3xl  font-bold",
+          "text-[28px]  font-bold",
           100
         )}
       </p>

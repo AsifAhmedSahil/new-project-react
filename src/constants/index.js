@@ -15,7 +15,7 @@ const navLinks = [
     type: "resume",
   },
   {
-    id: 4,
+    id: 5,
     name: "Skills",
     type: "terminal",
   },
