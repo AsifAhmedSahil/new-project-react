@@ -17,7 +17,7 @@ const LinkedInWindow = ({ dockRefs }) => {
 
       {/* Body */}
       <div className="relative flex-1 p-4 bg-white flex justify-center items-center overflow-hidden">
-        <div className="w-full max-w-[85%] h-full max-h-full overflow-hidden rounded">
+        <div className="w-full max-w-[85%] h-full max-h-[85%]  overflow-hidden rounded">
           <img
             src="/images/linkedin-snapshot.png"
             className="w-full h-full object-contain"
