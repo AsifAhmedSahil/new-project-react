@@ -85,7 +85,7 @@ const ResumeWindow = (() => {
   const getWrapperHeight = () => {
     if (typeof window !== "undefined") {
       // small screens < 800px height → 80% viewport
-      return window.innerHeight < 800 ? `${window.innerHeight * 0.8}px` : "52rem";
+      return window.innerHeight < 800 ? `${window.innerHeight * 0.9}px` : "52rem";
     }
     return "52rem"; // SSR fallback
   };
