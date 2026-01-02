@@ -59,25 +59,25 @@ const dockApps = [
 const blogPosts = [
   {
     id: 1,
-    date: "Sep 2, 2025",
+    date: "Nov 2, 2025",
     title:
-      "TypeScript Explained: What It Is, Why It Matters, and How to Master It",
+      "🚀 𝐏𝐨𝐬𝐭𝐠𝐫𝐞𝐒𝐐𝐋 𝐚𝐬 𝐚 𝐌𝐞𝐬𝐬𝐚𝐠𝐞 𝐐𝐮𝐞𝐮𝐞 — 𝐑𝐚𝐛𝐛𝐢𝐭𝐌𝐐/𝐊𝐚𝐟𝐤𝐚 ছাড়াই 𝐀𝐬𝐲𝐧𝐜 𝐏𝐫𝐨𝐜𝐞𝐬𝐬𝐢𝐧𝐠",
     image: "/images/blog1.png",
-    link: "https://jsmastery.com/blog/typescript-explained-what-it-is-why-it-matters-and-how-to-master-it",
+    link: "https://www.linkedin.com/posts/asif-ahmed-sahil_%F0%9D%90%8F%F0%9D%90%A8%F0%9D%90%AC%F0%9D%90%AD%F0%9D%90%A0%F0%9D%90%AB%F0%9D%90%9E%F0%9D%90%92%F0%9D%90%90%F0%9D%90%8B-%F0%9D%90%9A%F0%9D%90%AC-%F0%9D%90%9A-%F0%9D%90%8C%F0%9D%90%9E%F0%9D%90%AC%F0%9D%90%AC%F0%9D%90%9A%F0%9D%90%A0%F0%9D%90%9E-activity-7403276203580690434-f0oS?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC8SMSoBwB8gAFJQf9OzJepfNqZVOd9BRTQ",
   },
   {
     id: 2,
-    date: "Aug 28, 2025",
-    title: "The Ultimate Guide to Mastering Three.js for 3D Development",
+    date: "Dec 10, 2025",
+    title: "𝟓 𝐓𝐡𝐢𝐧𝐠𝐬 𝐓𝐡𝐚𝐭 𝐂𝐡𝐚𝐧𝐠𝐞𝐝 𝐇𝐨𝐰 𝐈 𝐒𝐞𝐞 𝐁𝐚𝐜𝐤𝐞𝐧𝐝 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐦𝐞𝐧𝐭",
     image: "/images/blog2.png",
-    link: "https://jsmastery.com/blog/the-ultimate-guide-to-mastering-three-js-for-3d-development",
+    link: "https://www.linkedin.com/posts/asif-ahmed-sahil_%F0%9D%9F%93-%F0%9D%90%93%F0%9D%90%A1%F0%9D%90%A2%F0%9D%90%A7%F0%9D%90%A0%F0%9D%90%AC-%F0%9D%90%93%F0%9D%90%A1%F0%9D%90%9A%F0%9D%90%AD-%F0%9D%90%82%F0%9D%90%A1%F0%9D%90%9A%F0%9D%90%A7%F0%9D%90%A0%F0%9D%90%9E%F0%9D%90%9D-%F0%9D%90%87%F0%9D%90%A8%F0%9D%90%B0-activity-7389631835376582656-2O9D?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC8SMSoBwB8gAFJQf9OzJepfNqZVOd9BRTQ",
   },
   {
     id: 3,
-    date: "Aug 15, 2025",
-    title: "The Ultimate Guide to Mastering GSAP Animations",
+    date: "Jan 1, 2026",
+    title: "🔰 𝐒𝐲𝐬𝐭𝐞𝐦 𝐃𝐞𝐬𝐢𝐠𝐧 𝐃𝐚𝐲 – 𝟐𝟎: 𝐑𝐞𝐝𝐢𝐬 𝐃𝐢𝐬𝐭𝐫𝐢𝐛𝐮𝐭𝐞𝐝 𝐋𝐨𝐜𝐤 — The Most Popular Way to Avoid Race Conditions",
     image: "/images/blog3.png",
-    link: "https://jsmastery.com/blog/the-ultimate-guide-to-mastering-gsap-animations",
+    link: "https://www.linkedin.com/posts/asif-ahmed-sahil_systemdesign-distributedsystem-backendengineering-activity-7402191375380983809-pyTo?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC8SMSoBwB8gAFJQf9OzJepfNqZVOd9BRTQ",
   },
 ];
 
@@ -118,17 +118,17 @@ const socials = [
   },
   {
     id: 2,
-    text: "Platform",
+    text: "Whatsapp",
     icon: "/icons/atom.svg",
     bg: "#4bcb63",
-    link: "https://jsmastery.com/",
+    link: "https://www.linkedin.com/in/asif-ahmed-sahil/",
   },
   {
     id: 3,
     text: "Twitter/X",
     icon: "/icons/twitter.svg",
     bg: "#ff866b",
-    link: "https://x.com/jsmasterypro",
+    link: "https://www.linkedin.com/in/asif-ahmed-sahil/",
   },
   {
     id: 4,

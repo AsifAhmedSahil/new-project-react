@@ -49,7 +49,7 @@ const Safari = ({dockRefs}) => {
       </div>
 
       <div className="blog">
-        <h2>My Developer Blog</h2>
+        <h2>My Recent Tech Blog</h2>
 
         <div className="blog">
          <div className="space-y-8">
