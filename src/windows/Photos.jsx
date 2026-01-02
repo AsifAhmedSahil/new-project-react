@@ -69,6 +69,19 @@ const Photos = ({ dockRefs }) => {
   );
 };
 
-const PhotoWrapper = WindowWrapper(Photos, "photos",{ width : "50rem", height : "48rem" });
+const PhotoWrapper = (() => {
+  const getHeight = () => {
+    if (typeof window !== "undefined") {
+      // small screens → 80% viewport, large screens → auto up to 80vh
+      return window.innerHeight < 800 ? `${window.innerHeight * 0.85}px` : "auto";
+    }
+    return "45rem"; // SSR fallback
+  };
+
+  return WindowWrapper(Image, "imgfile", {
+    width: "50rem",
+    height: getHeight(),
+  });
+})();
 
 export default PhotoWrapper;
