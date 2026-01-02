@@ -20,7 +20,7 @@ const Image = ({ dockRefs }) => {
       </div>
 
       {/* Image Body */}
-      <div className="flex-1 flex justify-center items-center p-5 overflow-y-auto bg-white">
+      <div className="flex-1 flex justify-center items-center p-5 overflow-y-auto scrollbar-hide bg-white">
         {imageUrl && (
           <img
             src={imageUrl}
