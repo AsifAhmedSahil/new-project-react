@@ -1,3 +1,5 @@
+'use client'
+
 import { WindowControls } from "#components";
 import { photosLinks, galleryByTab } from "#constants";
 import WindowWrapper from "#hoc/WindowWrapper";
@@ -10,16 +12,18 @@ const Photos = ({ dockRefs }) => {
   const [currentTab, setCurrentTab] = useState(1); // default Library
 
   return (
-    <>
-      <div id="window-header">
+    <div className="flex h-full w-full flex-col overflow-hidden max-h-screen">
+      {/* Header */}
+      <div id="window-header" className="flex items-center justify-between h-10 px-4 py-2 border-b shrink-0">
         <WindowControls target="photos" dockRefs={dockRefs} />
-        <div className="w-full flex justify-end items-center gap-3 text-gray-500">
+        <div className="flex items-center gap-3 text-gray-500">
           <Mail className="icon" />
           <Search className="icon" />
         </div>
       </div>
 
-      <div className="flex w-full h-[80vh]">
+      {/* Body */}
+      <div className="flex flex-1 w-full overflow-hidden">
         {/* Sidebar */}
         <div className="sidebar w-1/4 flex-none bg-gray-50 border-r border-gray-200 flex flex-col p-5">
           <h2 className="text-xs font-medium text-gray-400 mb-1">Photos</h2>
@@ -41,9 +45,9 @@ const Photos = ({ dockRefs }) => {
         </div>
 
         {/* Gallery */}
-        <div className="gallery w-3/4 p-5 overflow-y-auto">
+        <div className="gallery w-3/4 p-5 overflow-y-auto scrollbar-hide">
           <div className="columns-3 gap-4">
-            {galleryByTab[currentTab]?.map(({ id, img,name }) => (
+            {galleryByTab[currentTab]?.map(({ id, img, name }) => (
               <div key={id} className="mb-4 break-inside-avoid rounded-lg overflow-hidden">
                 <img
                   src={img}
@@ -65,20 +69,20 @@ const Photos = ({ dockRefs }) => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
+// Responsive wrapper height
 const PhotoWrapper = (() => {
   const getHeight = () => {
     if (typeof window !== "undefined") {
-      // small screens → 80% viewport, large screens → auto up to 80vh
-      return window.innerHeight < 800 ? `${window.innerHeight * 0.85}px` : "auto";
+      return window.innerHeight < 800 ? `${window.innerHeight * 0.8}px` : "48rem";
     }
-    return "45rem"; // SSR fallback
+    return "48rem";
   };
 
-  return WindowWrapper(Image, "imgfile", {
+  return WindowWrapper(Photos, "photos", {
     width: "50rem",
     height: getHeight(),
   });
