@@ -14,7 +14,7 @@ const wallpapers = [
   
 ];
 
-const defaultWallpaper = wallpapers[0];
+const defaultWallpaper = wallpapers[5];
 
 const useWallpaperStore = create((set) => ({
   current: localStorage.getItem("wallpaper") || defaultWallpaper,
