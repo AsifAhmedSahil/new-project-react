@@ -64,7 +64,7 @@ const Camera = ({ dockRefs }) => {
   return (
     <>
       {/* Header */}
-      <div id="window-header" className="flex items-center bg-gray-800 px-2 py-1">
+      <div id="window-header" className="flex items-center  px-2 py-1">
         <WindowControls target="camera" dockRefs={dockRefs} />
         <CameraIcon className="ml-2 w-4 h-4 opacity-70" />
         <span className="ml-2 text-sm font-medium">Camera</span>
@@ -120,5 +120,5 @@ const Camera = ({ dockRefs }) => {
   )
 }
 
-const CameraWrapper = WindowWrapper(Camera, 'camera',{height:"36rem"})
+const CameraWrapper = WindowWrapper(Camera, 'camera',{height:"32rem"})
 export default CameraWrapper
