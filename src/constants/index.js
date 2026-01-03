@@ -52,6 +52,7 @@ const dockApps = [
   { id: "finder", name: "Projects", icon: "projects.png", canOpen: true },
   { id: "leetcode", name: "Leetcode", icon: "leetcode.webp", canOpen: true },
   { id: "github", name: "Github", icon: "github.png", canOpen: true },
+  { id: "camera", name: "Camera", icon: "camera.png", canOpen: true },
   { id: "trash", name: "Archive", icon: "trash.png", canOpen: false },
 ]
 
@@ -508,6 +509,13 @@ const WINDOW_CONFIG = {
     data: null,
   },
   linkedin: {
+    isOpen: false,
+    isMinimized: false,
+    isMaximized: false,
+    zIndex: INITIAL_Z_INDEX,
+    data: null,
+  },
+  camera: {
     isOpen: false,
     isMinimized: false,
     isMaximized: false,

@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, lazy, Suspense } from 'react'
 import gsap from 'gsap'
 import { Dock, Home, Navbar, Welcome } from '#components'
-import { Safari, Terminal, Resume, Finder, Text, Image, Contact, LeetCodeWindow, GithubWindow, LinkedInWindow } from '#windows'
+import { Safari, Terminal, Resume, Finder, Text, Image, Contact, LeetCodeWindow, GithubWindow, LinkedInWindow, Camera } from '#windows'
 import WallpaperWindowWrapper from '#windows/WallpaperWindow'
 import DesktopWidgets from '#components/DesktopWidget'
 import useWindowStore from '#store/window'
@@ -70,6 +70,7 @@ const App = () => {
           <LeetCodeWindow />
           <GithubWindow />
           <LinkedInWindow />
+      <Camera dockRefs={dockRefs} />
 
           {/* Lazy loaded Photos */}
           <Suspense fallback={<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-gray-500">Loading Photos...</div>}>

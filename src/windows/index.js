@@ -8,6 +8,7 @@ import Contact from "./Contact"
 import LeetCodeWindow from "./LeetCodeWindow"
 import GithubWindow from "./GithubWindow"
 import LinkedInWindow from "./LinkedInWindow"
+import Camera from "./Camera"
 // import Photos from "./Photos"
 
-export {Terminal,Safari,Resume,Finder,Text,Image,Contact,LeetCodeWindow,GithubWindow,LinkedInWindow}
+export {Terminal,Safari,Resume,Finder,Text,Image,Contact,LeetCodeWindow,GithubWindow,LinkedInWindow,Camera}
