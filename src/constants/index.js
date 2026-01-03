@@ -63,21 +63,21 @@ const blogPosts = [
     date: "Nov 2, 2025",
     title:
       "🚀 𝐏𝐨𝐬𝐭𝐠𝐫𝐞𝐒𝐐𝐋 𝐚𝐬 𝐚 𝐌𝐞𝐬𝐬𝐚𝐠𝐞 𝐐𝐮𝐞𝐮𝐞 — 𝐑𝐚𝐛𝐛𝐢𝐭𝐌𝐐/𝐊𝐚𝐟𝐤𝐚 ছাড়াই 𝐀𝐬𝐲𝐧𝐜 𝐏𝐫𝐨𝐜𝐞𝐬𝐬𝐢𝐧𝐠",
-    image: "/images/blog1.png",
+    image: "/images/blog-1.png",
     link: "https://www.linkedin.com/posts/asif-ahmed-sahil_%F0%9D%90%8F%F0%9D%90%A8%F0%9D%90%AC%F0%9D%90%AD%F0%9D%90%A0%F0%9D%90%AB%F0%9D%90%9E%F0%9D%90%92%F0%9D%90%90%F0%9D%90%8B-%F0%9D%90%9A%F0%9D%90%AC-%F0%9D%90%9A-%F0%9D%90%8C%F0%9D%90%9E%F0%9D%90%AC%F0%9D%90%AC%F0%9D%90%9A%F0%9D%90%A0%F0%9D%90%9E-activity-7403276203580690434-f0oS?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC8SMSoBwB8gAFJQf9OzJepfNqZVOd9BRTQ",
   },
   {
     id: 2,
     date: "Dec 10, 2025",
     title: "𝟓 𝐓𝐡𝐢𝐧𝐠𝐬 𝐓𝐡𝐚𝐭 𝐂𝐡𝐚𝐧𝐠𝐞𝐝 𝐇𝐨𝐰 𝐈 𝐒𝐞𝐞 𝐁𝐚𝐜𝐤𝐞𝐧𝐝 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐦𝐞𝐧𝐭",
-    image: "/images/blog2.png",
+    image: "/images/blog-2.jpg",
     link: "https://www.linkedin.com/posts/asif-ahmed-sahil_%F0%9D%9F%93-%F0%9D%90%93%F0%9D%90%A1%F0%9D%90%A2%F0%9D%90%A7%F0%9D%90%A0%F0%9D%90%AC-%F0%9D%90%93%F0%9D%90%A1%F0%9D%90%9A%F0%9D%90%AD-%F0%9D%90%82%F0%9D%90%A1%F0%9D%90%9A%F0%9D%90%A7%F0%9D%90%A0%F0%9D%90%9E%F0%9D%90%9D-%F0%9D%90%87%F0%9D%90%A8%F0%9D%90%B0-activity-7389631835376582656-2O9D?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC8SMSoBwB8gAFJQf9OzJepfNqZVOd9BRTQ",
   },
   {
     id: 3,
     date: "Jan 1, 2026",
     title: "🔰 𝐒𝐲𝐬𝐭𝐞𝐦 𝐃𝐞𝐬𝐢𝐠𝐧 𝐃𝐚𝐲 – 𝟐𝟎: 𝐑𝐞𝐝𝐢𝐬 𝐃𝐢𝐬𝐭𝐫𝐢𝐛𝐮𝐭𝐞𝐝 𝐋𝐨𝐜𝐤 — The Most Popular Way to Avoid Race Conditions",
-    image: "/images/blog3.png",
+    image: "/images/blog-3.jpg",
     link: "https://www.linkedin.com/posts/asif-ahmed-sahil_systemdesign-distributedsystem-backendengineering-activity-7402191375380983809-pyTo?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC8SMSoBwB8gAFJQf9OzJepfNqZVOd9BRTQ",
   },
 ];
@@ -365,7 +365,7 @@ const ABOUT_LOCATION = {
       icon: "/images/gal8.jpg",
       kind: "file",
       fileType: "img",
-      position: "top-10 left-5",
+      position: "top-10 left-5 z-[99999]",
       imageUrl: "/images/gal8.jpg",
     },
     {
@@ -392,9 +392,9 @@ const ABOUT_LOCATION = {
       icon: "/images/txt.png",
       kind: "file",
       fileType: "txt",
-      position: "top-60 left-5",
+      position: "top-60 left-5 z-[9999999]",
       subtitle: "Meet the Engineer Behind the Code",
-      // image: "/images/adrian.jpg",
+      // image: "/images/gal2.jpg",
       description: [
         "Hey! I’m Sahil 👋, a Software Engineer who loves creating sleek, interactive websites that actually work smoothly.I specialize in JavaScript, React, and Next.js—and I enjoy building experiences that feel fast, intuitive, and just a little delightful.I care about clean UI, thoughtful UX, and writing code that’s easy to read, maintain, and debug.When I’m not coding, you might catch me tweaking layouts at 2AM, sipping too much coffee, or obsessively exploring new tech and gadgets 😅",
       ],
