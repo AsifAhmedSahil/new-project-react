@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
@@ -21,7 +22,7 @@ const Camera = ({ dockRefs }) => {
       })
       streamRef.current = stream
       if (videoRef.current) videoRef.current.srcObject = stream
-    } catch (err) {
+    } catch  {
       setError('Camera access denied')
     }
   }
