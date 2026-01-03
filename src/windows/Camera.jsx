@@ -51,7 +51,7 @@ const Camera = ({ dockRefs }) => {
     a.href = captured
     a.download = 'photo.png'
     a.click()
-    alert('Photo saved! You can take another one.')
+    // alert('Photo saved! You can take another one.')
     setCaptured(null)
     startCamera()
   }
@@ -120,5 +120,5 @@ const Camera = ({ dockRefs }) => {
   )
 }
 
-const CameraWrapper = WindowWrapper(Camera, 'camera')
+const CameraWrapper = WindowWrapper(Camera, 'camera',{height:"36rem"})
 export default CameraWrapper
